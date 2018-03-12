@@ -9,10 +9,15 @@
 .btn-primary {
     background-color: gold;
     color: black;
+    border: #212529;
 }
 
 .form-group {
     background-color: #212529;
+    color: #fff;
+}
+.form-control {
+    background-color: #343a40;
     color: #fff;
 }
 body {
