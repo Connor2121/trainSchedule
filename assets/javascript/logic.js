@@ -1,3 +1,4 @@
+
 var config = {
     apiKey: "AIzaSyD1Jykzcajy6YOv1t3VjLqDT5AtfG8zB44",
     authDomain: "train-schedule-467ff.firebaseapp.com",

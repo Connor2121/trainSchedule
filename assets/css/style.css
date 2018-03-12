@@ -6,4 +6,15 @@
     background-color: #212529;
     color: #fff;
 }
+.btn-primary {
+    background-color: gold;
+    color: black;
+}
 
+.form-group {
+    background-color: #212529;
+    color: #fff;
+}
+body {
+    background-color: #212529;
+}
