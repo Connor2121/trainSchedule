@@ -43,25 +43,25 @@ var config = {
       console.log(childSnapshot.val());
 
     // captures values that are added to database
-      var trainName = childSnapshot.val().trainName;
-      var destination = childSnapshot.val().destination;
-      var firstTrain = childSnapshot.val().firstTrain;
-      var frequency = childSnapshot.val().frequency; 
+      var firetrainName = childSnapshot.val().trainName;
+      var firedestination = childSnapshot.val().destination;
+      var firefirstTrain = childSnapshot.val().firstTrain;
+      var firefrequency = childSnapshot.val().frequency; 
       // converts first train input into readable military time
       // var firstTrainConverted = moment(firstTrain, "hhmm");
       // subtracts current time from the first train military time input
-      var diff = moment().diff(moment.unix(firstTrain), "minutes");
+      var diff = moment().diff(moment.unix(firefirstTrain), "minutes");
       // gives remainder from how many time frequency goes in diff
-      var timeRemainder = diff % frequency;
-      var minutesAway = frequency - timeRemainder;
-      var nextArrival = moment().add(minutesAway, "m").format('hh:mm A');
+      var timeRemainder = diff % firefrequency;
+      var minutesAway = firefrequency - timeRemainder;
+      var nextArrival = moment().add(minutesAway, "m").format("hh:mm A");
      
       
 
      // appends new train input to the table
 
-      $('#train-table > tbody').append('<tr><td>' + trainName + '</td><td>' + destination + '</td><td>' +
-    frequency + '</td><td>' + nextArrival + '</td><td>' + minutesAway + '</td></tr>');
+      $('#train-table > tbody').append('<tr><td>' + firetrainName + '</td><td>' + firedestination + '</td><td>' +
+    firefrequency + '</td><td>' + nextArrival + '</td><td>' + minutesAway + '</td></tr>');
 
   });
 
