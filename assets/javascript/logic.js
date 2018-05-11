@@ -13,10 +13,10 @@ var config = {
     // event for capturing values of new train input upon clicking submit button
   $('.btn-primary').on('click', function(event) {
       event.preventDefault();
-      var trainName = $('#trainName').val();
-      var destination = $('#destination').val();
-      var firstTrain = $('#nextArrival').val();
-      var frequency = $('#frequency').val();
+      var trainName = $('#trainName').val().trim();
+      var destination = $('#destination').val().trim();
+      var firstTrain = moment($('#nextArrival').val().trim(), "HH:mm").subtract(10,"years").format("X");
+      var frequency = $('#frequency').val().trim();
       console.log(trainName);
       console.log(destination);
       console.log(firstTrain);
@@ -48,13 +48,13 @@ var config = {
       var firstTrain = childSnapshot.val().firstTrain;
       var frequency = childSnapshot.val().frequency; 
       // converts first train input into readable military time
-      var firstTrainConverted = moment(firstTrain, "hhmm");
+      // var firstTrainConverted = moment(firstTrain, "hhmm");
       // subtracts current time from the first train military time input
-      var diff = moment().diff(moment(firstTrainConverted), "minutes");
+      var diff = moment().diff(moment.unix(firstTrain), "minutes");
       // gives remainder from how many time frequency goes in diff
       var timeRemainder = diff % frequency;
       var minutesAway = frequency - timeRemainder;
-      var nextArrival = moment().add(minutesAway, "minutes").format('hh:mm');
+      var nextArrival = moment().add(minutesAway, "m").format('hh:mm A');
      
       
 
